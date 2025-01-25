@@ -1,0 +1,31 @@
+#orientation-lock {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	z-index: 2147483647;
+	font-size: 1.5em;
+}
+
+/* Animation mobile rotate*/
+@keyframes rotate-mobile {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(90deg);
+	}
+}
+
+.phone-icon {
+	animation: rotate-mobile 2s ease-in-out infinite alternate;
+}

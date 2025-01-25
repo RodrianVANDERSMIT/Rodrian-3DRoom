@@ -1,0 +1,159 @@
+.music-player {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 200px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1001;
+  margin: 2px;
+}
+
+.music-player.menu-open {
+  transform: translateX(0);
+  opacity: 1;
+  width: 8vw;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 2147483647;
+}
+
+.music-player.menu-closed {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.music-player .menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.section-divider {
+  width: 80%;
+  margin: 10px auto;
+  border-top: 1px solid #ccc;
+}
+
+.current-song {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.mute-button {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+}
+
+.mute-button:hover {
+  background: #0056b3;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.volume-icon {
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.volume-slider {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #b8daff;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #007bff;
+  transition: width 0.1s ease;
+}
+
+.player-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.player-controls button {
+  margin: 0 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+}
+
+.player-controls button:hover {
+  background: #0056b3;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-height: 768px) {
+  .music-player {
+    width: 100px;
+    padding: 10px;
+  }
+
+  .menu-toggle {
+    top: 2px;
+    left: 5px;
+  }
+
+  .title {
+    font-size: 0.75rem;
+  }
+
+  .current-song {
+    font-size: 0.6rem;
+  }
+
+  .mute-button {
+    padding: 5px;
+    font-size: 8px;
+  }
+
+  .volume-icon {
+    font-size: 8px;
+  }
+
+  .volume-slider {
+    margin: 0;
+    width: 100%;
+  }
+
+  .progress-bar-container {
+    height: 5px;
+  }
+
+  .player-controls button {
+    padding: 5px;
+    font-size: 8px;
+  }
+}
