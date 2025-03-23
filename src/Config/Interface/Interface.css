@@ -6,7 +6,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 1000;
+	z-index:10;
 }
 
 .language-button {
@@ -21,7 +21,7 @@
 	justify-content: space-between;
 	align-items: center;
 	color: #fff;
-	z-index: 2147483647;
+	z-index: 10;
 
 }
 
@@ -99,21 +99,21 @@
 	left: 50%;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
-	z-index: 2147483647;
+	z-index:10;
 }
 
 .zoom-button-right {
 	position: fixed;
 	top: 15vh;
 	right: 32%;
-	z-index: 2147483647;
+	z-index:10;
 }
 
 .zoom-button-left {
 	position: fixed;
 	top: 15vh;
 	left: 35%;
-	z-index: 2147483647;
+	z-index:10;
 }
 
 .zoom-back-right {
@@ -131,7 +131,7 @@
 	position: fixed;
 	top: 1vh;
 	right: 1%;
-	z-index: 2147483647;
+	z-index:10;
 }
 
 .fullscreen-button {
@@ -144,7 +144,7 @@
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
-	z-index: 2147483647;
+	z-index:10;
 }
 
 .button-Cv-down {
@@ -152,7 +152,7 @@
 	top: 50%;
 	right: 20%;
 	font-size: 3em;
-	z-index: 2147483647;
+	z-index:10;
 }
 
 .button-Cv-up {
@@ -160,7 +160,7 @@
 	top: 50%;
 	right: 20%;
 	font-size: 3em;
-	z-index: 2147483647;
+	z-index:10;
 }
 
 /* Media Query for Mobile Devices */
@@ -198,7 +198,7 @@
 		position: fixed;
 		top: 13%;
 		right: 32%;
-		z-index: 2147483647;
+		z-index:10;
 	}
 
 	.zoom-back-right {
@@ -210,7 +210,7 @@
 		position: fixed;
 		top: 13%;
 		left: 34%;
-		z-index: 2147483647;
+		z-index:10;
 	}
 
 	.zoom-back-left {
@@ -223,7 +223,7 @@
 		top: 50%;
 		right: 20%;
 		font-size: 4em;
-		z-index: 2147483647;
+		z-index:10;
 	}
 
 	.button-Cv-up {
@@ -231,7 +231,7 @@
 		top: 50%;
 		right: 20%;
 		font-size: 4em;
-		z-index: 2147483647;
+		z-index:10;
 	}
 
 }

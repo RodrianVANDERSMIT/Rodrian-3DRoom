@@ -1,4 +1,3 @@
-import React from 'react';
 import { Html } from '@react-three/drei';
 import { FaQuestionCircle } from 'react-icons/fa';
 import useStore from '../../stores/useStore';
@@ -16,13 +15,13 @@ const Icon = ({ position, onClick, color }) => (
 );
 
 export default function IconeAnimation() {
-
-
 	const setAnimationTvLeft = useStore((state) => state.setAnimationTvLeft);
 	const animationTvLeft = useStore((state) => state.animationTvLeft);
-
 	const setAnimationTvRight = useStore((state) => state.setAnimationTvRight);
 	const animationTvRight = useStore((state) => state.animationTvRight);
+	const isLoading = useStore((state) => state.isLoading);
+
+	if (isLoading) return null;
 
 	return (
 		<>

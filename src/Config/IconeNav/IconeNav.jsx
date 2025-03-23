@@ -16,9 +16,12 @@ const Icon = ({ position, onClick, color }) => (
 );
 
 export default function IconeNav() {
-
 	const cameraPositionPreset = useStore((state) => state.cameraPositionPreset);
 	const setCameraPositionPreset = useStore((state) => state.setCameraPositionPreset);
+	const isLoading = useStore((state) => state.isLoading);
+
+	if (isLoading) return null;
+
 	return (
 		<>
 			{cameraPositionPreset === 'Base' && (

@@ -1,10 +1,11 @@
 import './MobileOrientationLock.css';
 import { useEffect, useState } from 'react';
 import { FaMobileAlt } from 'react-icons/fa';
-
+import useStore from '../../stores/useStore';
 
 export default function MobileOrientationLock() {
 	const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth);
+	const isLoading = useStore((state) => state.isLoading);
 
 	const checkOrientation = () => {
 		setIsPortrait(window.innerHeight > window.innerWidth);
@@ -20,6 +21,7 @@ export default function MobileOrientationLock() {
 		};
 	}, []);
 
+	if (isLoading) return null;
 
 	return (
 		isPortrait && (

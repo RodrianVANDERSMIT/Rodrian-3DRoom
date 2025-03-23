@@ -1,6 +1,6 @@
-
 import { OrbitControls, Html } from '@react-three/drei';
 import { Perf } from 'r3f-perf';
+import useStore from './stores/useStore';
 
 import Boo from './model/Boo/Boo';
 import Floor from './model/Floor/Floor';
@@ -19,6 +19,27 @@ import Chair from './model/Chair/Chair';
 import { useThree } from '@react-three/fiber';
 import { useEffect } from 'react';
 
+const IframeWrapper = ({ wrapperClass, transform, distanceFactor, position, rotation, src, title }) => {
+    const isLoading = useStore((state) => state.isLoading);
+
+    if (isLoading) return null;
+
+    return (
+        <Html
+            wrapperClass={wrapperClass}
+            transform={transform}
+            distanceFactor={distanceFactor}
+            position={position}
+            rotation={rotation}
+        >
+            <iframe
+                src={src}
+                sandbox="allow-scripts allow-same-origin allow-popups"
+                title={title}
+            />
+        </Html>
+    );
+};
 
 export default function Experience() {
     const { scene } = useThree();
@@ -48,45 +69,32 @@ export default function Experience() {
             <CvModel />
             <Cat />
             <Chair />
-            <Html
+            <IframeWrapper
                 wrapperClass='htmlScreenLeft'
                 transform
                 distanceFactor={0.41}
                 position={[-3.78638, 1.40568, -0.760753]}
                 rotation={[0, 7.97, 0]}
-            >
-                <iframe
-                    src="https://rodrian-race.vercel.app/"
-                    sandbox="allow-scripts allow-same-origin allow-popups"
-                    title="Rodrian Race"
-                />
-
-            </Html>
-            <Html
+                src="https://rodrian-race.vercel.app/"
+                title="Rodrian Race"
+            />
+            <IframeWrapper
                 wrapperClass='htmlScreenRight'
                 transform
-                distanceFactor={0.21}
+                distanceFactor={0.29}
                 position={[-3.79187, 1.40568, -1.67714]}
                 rotation={[0, 1.45, 0]}
-            >
-
-                <iframe
-
-                    src="https://rodrianvandersmitportfolio2dfor3d.vercel.app/"
-                    sandbox="allow-scripts allow-same-origin allow-popups"
-                    title="Rodrian Portfolio"
-                />
-            </Html>
-            <Html
+                src="https://rodrian-van-der-smit.vercel.app/"
+                title="Rodrian Portfolio"
+            />
+            <IframeWrapper
                 wrapperClass='htmlScreen'
                 transform
                 distanceFactor={0.73}
                 position={[2.3592, 1.2057, -2.85771]}
-
-            >
-                <iframe src="https://portal-rodrian.vercel.app/" />
-
-            </Html>
+                src="https://portal-rodrian.vercel.app/"
+                title="Portal Rodrian"
+            />
 
 
 

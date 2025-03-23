@@ -55,5 +55,7 @@ export default create(subscribeWithSelector((set) => {
 			animationTvRight: preset
 		}),
 
+		isLoading: true,
+		setIsLoading: (loading) => set({ isLoading: loading }),
 	}
 }))
